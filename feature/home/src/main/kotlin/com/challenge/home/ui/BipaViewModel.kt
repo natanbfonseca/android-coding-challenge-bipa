@@ -1,8 +1,10 @@
-package com.challenge.home.ui.viewmodel
+package com.challenge.home.ui
 
 import androidx.lifecycle.viewModelScope
 import com.challenge.common.viewmodel.BaseViewModel
 import com.challenge.domain.usecase.GetNodesUseCase
+import com.challenge.home.ui.event.BipaEvent
+import com.challenge.home.ui.state.BipaState
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch

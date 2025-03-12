@@ -4,9 +4,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -23,9 +26,8 @@ import com.challenge.designsystem.component.NodeCard
 import com.challenge.designsystem.screen.ErrorScreen
 import com.challenge.designsystem.screen.LoadingScreen
 import com.challenge.home.R
-import com.challenge.home.ui.viewmodel.BipaEvent
-import com.challenge.home.ui.viewmodel.BipaState
-import com.challenge.home.ui.viewmodel.BipaViewModel
+import com.challenge.home.ui.event.BipaEvent
+import com.challenge.home.ui.state.BipaState
 import com.challenge.model.City
 import com.challenge.model.Country
 import com.challenge.model.Node
@@ -37,7 +39,7 @@ fun HomeScreen(modifier: Modifier, viewModel: BipaViewModel = koinViewModel()) {
 
     when {
         uiState.isLoading -> LoadingScreen(modifier = modifier)
-        uiState.error != null -> ErrorScreen(text = uiState.error)
+        uiState.error != null -> ErrorScreen(text = uiState.error, modifier = modifier)
         else -> HomeContent(uiState = uiState)
     }
 
@@ -54,16 +56,19 @@ private fun HomeContent(
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
-            .statusBarsPadding(),
+            .statusBarsPadding()
+            .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top,
-        contentPadding = PaddingValues(8.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp),
+        contentPadding = PaddingValues(top = 16.dp, bottom = 16.dp)
     ) {
         item {
             Text(
                 text = stringResource(R.string.mobile_coding_challenge),
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = 24.sp,
+                style = MaterialTheme.typography.headlineMedium,
+                modifier = Modifier.padding(bottom = 16.dp)
             )
         }
 
@@ -78,7 +83,10 @@ private fun HomeContent(
                     firstSeen = node.firstSeen,
                     updatedAt = node.updatedAt,
                     city = node.city?.ptBR,
-                    country = node.country?.ptBR
+                    country = node.country?.ptBR,
+                    modifier = modifier
+                        .fillMaxWidth()
+                        .padding(8.dp)
                 )
             }
         }

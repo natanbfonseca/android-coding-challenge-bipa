@@ -1,6 +1,6 @@
 package com.challenge.home.di
 
-import com.challenge.home.ui.viewmodel.BipaViewModel
+import com.challenge.home.ui.BipaViewModel
 import org.koin.core.module.dsl.viewModelOf
 import org.koin.dsl.module
 

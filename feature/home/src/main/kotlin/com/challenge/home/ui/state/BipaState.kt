@@ -1,4 +1,4 @@
-package com.challenge.home.ui.viewmodel
+package com.challenge.home.ui.state
 
 import com.challenge.model.Node
 

@@ -1,7 +1,7 @@
 import com.challenge.domain.usecase.GetNodesUseCase
-import com.challenge.home.ui.viewmodel.BipaEvent
-import com.challenge.home.ui.viewmodel.BipaState
-import com.challenge.home.ui.viewmodel.BipaViewModel
+import com.challenge.home.ui.event.BipaEvent
+import com.challenge.home.ui.state.BipaState
+import com.challenge.home.ui.BipaViewModel
 import com.challenge.model.Node
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

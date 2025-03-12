@@ -36,9 +36,7 @@ fun NodeCard(
     }
 
     Card(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(8.dp),
+        modifier = modifier,
         elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
     ) {
         Column(
