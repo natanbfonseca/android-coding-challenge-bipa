@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="btc">%1$s BTC</string>
+    <string name="first_seen">First Seen</string>
+    <string name="updated_at">Updated at</string>
+    <string name="location">Location</string>
+</resources>
